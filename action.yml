@@ -1,5 +1,5 @@
 runs:
   using: 'node20'
-  main: 'non-exists.js'
+  main: 'ecosystem.config.js'
 
           

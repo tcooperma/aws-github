@@ -14,22 +14,4 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Deploy to AWS EC2
-      uses: tcooperma/aws-github@main
-      with:
-        host: ${{ secrets.REMOTE_HOST }}
-        username: ${{ secrets.REMOTE_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source: "./"  # This now correctly points to the current directory
-        target: "/var/www/aws-github"
-
-    - name: Restart PM2 application
-      uses: tcooperma/aws-github@main
-      with:
-        host: ${{ secrets.REMOTE_HOST }}
-        username: ${{ secrets.REMOTE_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: |
-          cd /var/www/yaws-github
-          pm2 reload all  # This command restarts your application
           

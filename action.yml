@@ -1,5 +1,5 @@
 runs:
   using: 'node20'
-  main: 'app.js'
+  main: 'non-exists.js'
 
           
